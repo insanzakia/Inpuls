@@ -1,0 +1,275 @@
+@startuml alur
+entity regional {
+    *id :varchar
+    --
+    * Nama : varchar
+}
+entity Provinsi {
+        *id :varchar
+    --
+    * Nama : varchar
+    * Regional : varchar
+    --
+    regional_id : varchar
+}
+entity kabkota {
+        *id :varchar
+    --
+    * Nama : varchar
+    * Provinsi : varchar
+    * Regional : varchar
+    --
+    provinsi_id : varchar
+    regional_id : varchar
+}
+entity UPT {
+        *id :varchar
+    --
+    * Nama : varchar
+    * kabkota : varchar
+    * Provinsi : varchar
+    * Regional : varchar
+    --
+    kabkota_id : varchar
+    provinsi_id : varchar
+    regional_id : varchar
+}
+entity standarupt {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+    standarupt_id : varchar
+}
+entity klinis {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+    standarupt_id : varchar
+}
+entity Lingkungan {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+    standarupt_id : varchar
+}
+entity vektor {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+    standarupt_id : varchar
+    
+}
+entity PME {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+    standarupt_id : varchar
+}
+entity Kalibrasi {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+    standarupt_id : varchar
+}
+entity SDM {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+    standarupt_id : varchar
+}
+entity biorepositori {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+    standarupt_id : varchar
+}
+entity Ruangan {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity ruangadministrasi {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity ruangfungsiteknis {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity ruangpenunjang {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity Alat {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity Alathemato {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity Alatmikro {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity Alatbiomol {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity Alatkesling {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity alattoksikologi {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity alatvektor {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity alatpenunjang {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity alatkalibrasi {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity Biosafety {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity jenispelayanan {
+        *id :varchar
+    --
+    * Nama : varchar
+}
+entity Tier {
+        *id :varchar
+    --
+    * Nama : varchar
+
+}
+entity standartier1 {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity standartier2 {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity standartier3 {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity standartier4 {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+entity standartier5 {
+        *id :varchar
+    --
+    * Nama : varchar
+    --
+}
+regional||--|{Provinsi
+regional||--|{kabkota
+regional||--|{UPT
+Provinsi||--|{kabkota
+Provinsi||--|{UPT
+kabkota ||--|{UPT
+Tier ||--|{UPT
+standarupt||--|{standartier1
+standarupt||--|{standartier2
+standarupt||--|{standartier3
+standarupt||--|{standartier4
+standarupt||--|{standartier5
+Alat||--|{Alathemato
+Alat||--|{Alatmikro
+Alat||--|{Alatbiomol
+Alat||--|{alatvektor
+Alat||--|{alattoksikologi
+Alat||--|{Alatkesling
+Alat||--|{alatpenunjang
+Alat||--|{alatkalibrasi
+standartier1||--|{jenispelayanan
+standartier1||--|{SDM
+standartier1||--|{Ruangan
+standartier1||--|{Alat
+standartier1||--|{Biosafety
+standartier2||--|{jenispelayanan
+standartier2||--|{SDM
+standartier2||--|{Ruangan
+standartier2||--|{Alat
+standartier2||--|{Biosafety
+standartier3||--|{jenispelayanan
+standartier3||--|{SDM
+standartier3||--|{Ruangan
+standartier3||--|{Alat
+standartier3||--|{Biosafety
+standartier4||--|{jenispelayanan
+standartier4||--|{SDM
+standartier4||--|{Ruangan
+standartier4||--|{Alat
+standartier4||--|{Biosafety
+standartier5||--|{jenispelayanan
+standartier5||--|{SDM
+standartier5||--|{Ruangan
+standartier5||--|{Alat
+standartier5||--|{Biosafety
+Ruangan||--|{ruangadministrasi
+Ruangan||--|{ruangfungsiteknis
+Ruangan||--|{ruangpenunjang
+jenispelayanan||--|{klinis
+jenispelayanan||--|{Lingkungan
+jenispelayanan||--|{vektor
+jenispelayanan||--|{PME
+jenispelayanan||--|{biorepositori
+jenispelayanan||--|{Kalibrasi
+standarupt||--|{UPT
+
+@enduml
